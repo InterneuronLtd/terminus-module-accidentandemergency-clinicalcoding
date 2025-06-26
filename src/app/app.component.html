@@ -1,0 +1,890 @@
+<!--BEGIN LICENSE BLOCK--> 
+<!--Interneuron Terminus
+
+Copyright(C) 2025  Interneuron Limited
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.If not, see<http://www.gnu.org/licenses/>. -->
+<!--END LICENSE BLOCK--> 
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-4">
+      <div id='InformationCategory' class='row'>
+        <div id='inner_InformationCategory' class='col-md-12 '>
+          <h3>Information Category</h3>
+
+
+          <div class="row" id="InformationCategoryRow">
+            <div class="col-md-6">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_InformationCategory_AlcoholRelated'><input type='checkbox' name='chk_InformationCategory' id='chk_InformationCategory_AlcoholRelated' value='Alcohol Related' class='custom-control-input chk_InformationCategory'><label for='chk_InformationCategory_AlcoholRelated' class='custom-control-label'>Alcohol Related</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_InformationCategory_Assault'><input type='checkbox' name='chk_InformationCategory' id='chk_InformationCategory_Assault' value='Assault' class='custom-control-input chk_InformationCategory'><label for='chk_InformationCategory_Assault' class='custom-control-label'>Assault</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_InformationCategory_CardiacArrest'><input type='checkbox' name='chk_InformationCategory' id='chk_InformationCategory_CardiacArrest' value='Cardiac Arrest' class='custom-control-input chk_InformationCategory'><label for='chk_InformationCategory_CardiacArrest' class='custom-control-label'>Cardiac Arrest</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_InformationCategory_MajorTrauma'><input type='checkbox' name='chk_InformationCategory' id='chk_InformationCategory_MajorTrauma' value='Major Trauma' class='custom-control-input chk_InformationCategory'><label for='chk_InformationCategory_MajorTrauma' class='custom-control-label'>Major Trauma</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_InformationCategory_RTC'><input type='checkbox' name='chk_InformationCategory' id='chk_InformationCategory_RTC' value='RTC' class='custom-control-input chk_InformationCategory'><label for='chk_InformationCategory_RTC' class='custom-control-label'>RTC</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_InformationCategory_TeachingCase'><input type='checkbox' name='chk_InformationCategory' id='chk_InformationCategory_TeachingCase' value='Teaching Case' class='custom-control-input chk_InformationCategory'><label for='chk_InformationCategory_TeachingCase' class='custom-control-label'>Teaching Case</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <h3>Summary</h3>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed beige-color isPointer" id="anchorDiagnosis">
+              <div>
+                <h6 class="my-0">Diagnosis</h6>                
+              </div>
+              <span class="" id="lblDiagnosisArray"></span>
+              <span id="lblDiagnosisStatus"></span>
+
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed dark-beige-color isPointer" id="anchorInvestigations">
+              <div>
+                <h6 class="my-0">Investigations</h6>
+              </div>
+              <span class="" id="lblInvestigationsArray"></span>
+              <span id="lblInvestigationsStatus"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed beige-color isPointer" id="anchorTreatments">
+              <div>
+                <h6 class="my-0">Treatments</h6>
+              </div>
+              <span class="" id="lblTreatmentsArray"></span>
+              <span class="" id="lblTreatmentsStatus"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed  dark-beige-color isPointer" id="anchorDischarge">
+              <div>
+                <h6 class="my-0">Discharge</h6>
+              </div>
+              <span class="" id="lblSeniorReviewStatus"></span>
+              <span class="" id="lblDischargeStatus"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <a name="ad_Diagnosis"></a>
+  <div id='Diagnosis' class='row'>
+    <div id='inner_Diagnosis' class='col-md-12'>
+      <h3>Diagnosis</h3>
+
+      <div id="MainDiagnosis">
+        <div id="MainDiagnosisRow" class="row">
+          <div class="col-md-3" style="padding-top: 7px;">
+            <span>Main Diagnosis</span> <span id="isLocked" class="text-info"> (Locked)</span>
+          </div>
+          <div class="col-md-6">
+            <select class="form-control" id="ddlMainCategory">
+              <option value=''>Please select..</option>
+              <option value='Injuries'>Injuries</option>
+              <option value='Medicine'>Medicine</option>
+              <option value='Minor Illness'>Minor Illness</option>
+              <option value='Obs and Gynae'>Obs and Gynae</option>
+              <option value='Ophthalmology'>Ophthalmology</option>
+              <option value='Orthopaedics'>Orthopaedics</option>
+              <option value='Psychiatry'>Psychiatry</option>
+              <option value='Surgery'>Surgery</option>
+              <option value='Urology'>Urology</option>
+              <option value='Other Category'>Other Category</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <button id="btnUnlock" class="btn btn-secondary btn-block text-white"><i class="fa fa-key"></i> Unlock Main Diagnosis</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="noDiagnosis">
+        Please select a main diagnosis
+      </div>
+
+
+      <div id='Injuries' class='row'>
+        <div id='inner_Injuries' class='col-md-12 '>
+          <h4>Injuries</h4>
+          <div class="row">
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_Abrasion'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_Abrasion' value='Abrasion' class='custom-control-input chk_Injuries'><label for='chk_Injuries_Abrasion' class='custom-control-label'>Abrasion</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_Biteorsting'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_Biteorsting' value='Bite or sting' class='custom-control-input chk_Injuries'><label for='chk_Injuries_Biteorsting' class='custom-control-label'>Bite or sting</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_Burns'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_Burns' value='Burns' class='custom-control-input chk_Injuries'><label for='chk_Injuries_Burns' class='custom-control-label'>Burns</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_ChemicalInjurySkin'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_ChemicalInjurySkin' value='Chemical Injury - Skin' class='custom-control-input chk_Injuries'><label for='chk_Injuries_ChemicalInjurySkin' class='custom-control-label'>Chemical Injury - Skin</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_ClosedFracture'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_ClosedFracture' value='Closed Fracture' class='custom-control-input chk_Injuries'><label for='chk_Injuries_ClosedFracture' class='custom-control-label'>Closed Fracture</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_Dislocation'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_Dislocation' value='Dislocation' class='custom-control-input chk_Injuries'><label for='chk_Injuries_Dislocation' class='custom-control-label'>Dislocation</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_ElectricShock'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_ElectricShock' value='Electric Shock' class='custom-control-input chk_Injuries'><label for='chk_Injuries_ElectricShock' class='custom-control-label'>Electric Shock</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_ForeignBody'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_ForeignBody' value='Foreign Body' class='custom-control-input chk_Injuries'><label for='chk_Injuries_ForeignBody' class='custom-control-label'>Foreign Body</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_Haematoma'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_Haematoma' value='Haematoma' class='custom-control-input chk_Injuries'><label for='chk_Injuries_Haematoma' class='custom-control-label'>Haematoma</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_MinorHeadInjury'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_MinorHeadInjury' value='Minor Head Injury' class='custom-control-input chk_Injuries'><label for='chk_Injuries_MinorHeadInjury' class='custom-control-label'>Minor Head Injury</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_OpenFracture'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_OpenFracture' value='Open Fracture' class='custom-control-input chk_Injuries'><label for='chk_Injuries_OpenFracture' class='custom-control-label'>Open Fracture</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_SoftTissueInjuryorSprain'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_SoftTissueInjuryorSprain' value='Soft Tissue Injury or Sprain' class='custom-control-input chk_Injuries'><label for='chk_Injuries_SoftTissueInjuryorSprain' class='custom-control-label'>Soft Tissue Injury or Sprain</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_Tendonitis'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_Tendonitis' value='Tendonitis' class='custom-control-input chk_Injuries'><label for='chk_Injuries_Tendonitis' class='custom-control-label'>Tendonitis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Injuries_Wound'><input type='checkbox' name='chk_Injuries' id='chk_Injuries_Wound' value='Wound ' class='custom-control-input chk_Injuries'><label for='chk_Injuries_Wound' class='custom-control-label'>Wound </label></div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div id='Medicine' class='row'>
+        <div id='inner_Medicine' class='col-md-12 '>
+          <h4>Medicine</h4>
+          <div class="row">
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_ACS'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_ACS' value='ACS' class='custom-control-input chk_Medicine'><label for='chk_Medicine_ACS' class='custom-control-label'>ACS</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_Anaemia'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_Anaemia' value='Anaemia' class='custom-control-input chk_Medicine'><label for='chk_Medicine_Anaemia' class='custom-control-label'>Anaemia</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_AnaphylaxisorAllergicReaction'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_AnaphylaxisorAllergicReaction' value='Anaphylaxis or Allergic Reaction' class='custom-control-input chk_Medicine'><label for='chk_Medicine_AnaphylaxisorAllergicReaction' class='custom-control-label'>Anaphylaxis or Allergic Reaction</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_Arrhythmia'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_Arrhythmia' value='Arrhythmia' class='custom-control-input chk_Medicine'><label for='chk_Medicine_Arrhythmia' class='custom-control-label'>Arrhythmia</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_Asthma'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_Asthma' value='Asthma' class='custom-control-input chk_Medicine'><label for='chk_Medicine_Asthma' class='custom-control-label'>Asthma</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_ChestInfectionorPneumonia'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_ChestInfectionorPneumonia' value='Chest Infection or Pneumonia' class='custom-control-input chk_Medicine'><label for='chk_Medicine_ChestInfectionorPneumonia' class='custom-control-label'>Chest Infection or Pneumonia</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_Convulsion'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_Convulsion' value='Convulsion' class='custom-control-input chk_Medicine'><label for='chk_Medicine_Convulsion' class='custom-control-label'>Convulsion</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_COPD'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_COPD' value='COPD' class='custom-control-input chk_Medicine'><label for='chk_Medicine_COPD' class='custom-control-label'>COPD</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_CVA'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_CVA' value='CVA' class='custom-control-input chk_Medicine'><label for='chk_Medicine_CVA' class='custom-control-label'>CVA</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_DKA'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_DKA' value='DKA' class='custom-control-input chk_Medicine'><label for='chk_Medicine_DKA' class='custom-control-label'>DKA</label></div></div>
+            </div>
+            <div class="col-md-4">
+
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_DVT'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_DVT' value='DVT' class='custom-control-input chk_Medicine'><label for='chk_Medicine_DVT' class='custom-control-label'>DVT</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_ElectrolyteImbalance'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_ElectrolyteImbalance' value='Electrolyte Imbalance' class='custom-control-input chk_Medicine'><label for='chk_Medicine_ElectrolyteImbalance' class='custom-control-label'>Electrolyte Imbalance</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_Gastritis'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_Gastritis' value='Gastritis' class='custom-control-input chk_Medicine'><label for='chk_Medicine_Gastritis' class='custom-control-label'>Gastritis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_Gastroenteritis'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_Gastroenteritis' value='Gastroenteritis' class='custom-control-input chk_Medicine'><label for='chk_Medicine_Gastroenteritis' class='custom-control-label'>Gastroenteritis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_IntracranialBleed'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_IntracranialBleed' value='Intracranial Bleed' class='custom-control-input chk_Medicine'><label for='chk_Medicine_IntracranialBleed' class='custom-control-label'>Intracranial Bleed</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_IntracranialInfection'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_IntracranialInfection' value='Intracranial Infection' class='custom-control-input chk_Medicine'><label for='chk_Medicine_IntracranialInfection' class='custom-control-label'>Intracranial Infection</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_MetabolicDisturbance'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_MetabolicDisturbance' value='Metabolic Disturbance' class='custom-control-input chk_Medicine'><label for='chk_Medicine_MetabolicDisturbance' class='custom-control-label'>Metabolic Disturbance</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_MI'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_MI' value='MI' class='custom-control-input chk_Medicine'><label for='chk_Medicine_MI' class='custom-control-label'>MI</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_NeutroponicSepsis'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_NeutroponicSepsis' value='Neutroponic Sepsis' class='custom-control-input chk_Medicine'><label for='chk_Medicine_NeutroponicSepsis' class='custom-control-label'>Neutroponic Sepsis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_PE'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_PE' value='PE' class='custom-control-input chk_Medicine'><label for='chk_Medicine_PE' class='custom-control-label'>PE</label></div></div>
+            </div>
+            <div class="col-md-4">
+
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_Pneumothorax'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_Pneumothorax' value='Pneumothorax' class='custom-control-input chk_Medicine'><label for='chk_Medicine_Pneumothorax' class='custom-control-label'>Pneumothorax</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_SickleCellCrisis'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_SickleCellCrisis' value='Sickle Cell Crisis' class='custom-control-input chk_Medicine'><label for='chk_Medicine_SickleCellCrisis' class='custom-control-label'>Sickle Cell Crisis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_SoftTissueInfection'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_SoftTissueInfection' value='Soft Tissue Infection' class='custom-control-input chk_Medicine'><label for='chk_Medicine_SoftTissueInfection' class='custom-control-label'>Soft Tissue Infection</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_TIA'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_TIA' value='TIA' class='custom-control-input chk_Medicine'><label for='chk_Medicine_TIA' class='custom-control-label'>TIA</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_UpperGIBleed'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_UpperGIBleed' value='Upper GI Bleed' class='custom-control-input chk_Medicine'><label for='chk_Medicine_UpperGIBleed' class='custom-control-label'>Upper GI Bleed</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_Vasovagal'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_Vasovagal' value='Vasovagal' class='custom-control-input chk_Medicine'><label for='chk_Medicine_Vasovagal' class='custom-control-label'>Vasovagal</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_OtherCardiacCondition'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_OtherCardiacCondition' value='Other Cardiac Condition' class='custom-control-input chk_Medicine'><label for='chk_Medicine_OtherCardiacCondition' class='custom-control-label'>Other Cardiac Condition</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_OtherCNSCondiiton'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_OtherCNSCondiiton' value='Other CNS  Condiiton' class='custom-control-input chk_Medicine'><label for='chk_Medicine_OtherCNSCondiiton' class='custom-control-label'>Other CNS  Condiiton</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_OtherHaematologicalCondition'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_OtherHaematologicalCondition' value='Other Haematological Condition' class='custom-control-input chk_Medicine'><label for='chk_Medicine_OtherHaematologicalCondition' class='custom-control-label'>Other Haematological Condition</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medicine_OtherRespiratoryCondition'><input type='checkbox' name='chk_Medicine' id='chk_Medicine_OtherRespiratoryCondition' value='Other Respiratory Condition' class='custom-control-input chk_Medicine'><label for='chk_Medicine_OtherRespiratoryCondition' class='custom-control-label'>Other Respiratory Condition</label></div></div>
+            </div>
+          </div>
+
+
+
+
+
+
+        </div>
+      </div>
+      <div id='MinorIllness' class='row'>
+        <div id='inner_MinorIllness' class='col-md-12 '>
+          <h4>Minor Illness</h4>
+          <div class="row">
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_Abscess'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_Abscess' value='Abscess' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_Abscess' class='custom-control-label'>Abscess</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_ALTE'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_ALTE' value='ALTE' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_ALTE' class='custom-control-label'>ALTE</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_Choking'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_Choking' value='Choking' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_Choking' class='custom-control-label'>Choking</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_Constipation'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_Constipation' value='Constipation' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_Constipation' class='custom-control-label'>Constipation</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_Croup'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_Croup' value='Croup' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_Croup' class='custom-control-label'>Croup</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_Epistaxis'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_Epistaxis' value='Epistaxis' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_Epistaxis' class='custom-control-label'>Epistaxis</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_FebrileConvulsion'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_FebrileConvulsion' value='Febrile Convulsion' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_FebrileConvulsion' class='custom-control-label'>Febrile Convulsion</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_Headache'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_Headache' value='Headache' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_Headache' class='custom-control-label'>Headache</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_Impertigo'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_Impertigo' value='Impertigo' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_Impertigo' class='custom-control-label'>Impertigo</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_NonspecificAbdoPain'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_NonspecificAbdoPain' value='Non-specific Abdo Pain' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_NonspecificAbdoPain' class='custom-control-label'>Non-specific Abdo Pain</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_NonspecificChestPain'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_NonspecificChestPain' value='Non-specific Chest Pain' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_NonspecificChestPain' class='custom-control-label'>Non-specific Chest Pain</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_OtherDermatologicalCondition'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_OtherDermatologicalCondition' value='Other Dermatological Condition' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_OtherDermatologicalCondition' class='custom-control-label'>Other Dermatological Condition</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_OtisMediaorExterna'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_OtisMediaorExterna' value='Otis Media or Externa' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_OtisMediaorExterna' class='custom-control-label'>Otis Media or Externa</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_SoftTissueInflamation'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_SoftTissueInflamation' value='Soft Tissue Inflamation' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_SoftTissueInflamation' class='custom-control-label'>Soft Tissue Inflamation</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_URTIorTonsiilitis'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_URTIorTonsiilitis' value='URTI or Tonsiilitis' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_URTIorTonsiilitis' class='custom-control-label'>URTI or Tonsiilitis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_UTI'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_UTI' value='UTI' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_UTI' class='custom-control-label'>UTI</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_ViralIllness'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_ViralIllness' value='Viral Illness' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_ViralIllness' class='custom-control-label'>Viral Illness</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_ViralRash'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_ViralRash' value='Viral Rash' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_ViralRash' class='custom-control-label'>Viral Rash</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorIllness_OtherENTCondition'><input type='checkbox' name='chk_MinorIllness' id='chk_MinorIllness_OtherENTCondition' value='Other ENT Condition' class='custom-control-input chk_MinorIllness'><label for='chk_MinorIllness_OtherENTCondition' class='custom-control-label'>Other ENT Condition</label></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='ObsandGynae' class='row'>
+        <div id='inner_ObsandGynae' class='col-md-12 '>
+          <h4>Obs and Gynae</h4>
+          <div class="row">
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_ObsandGynae_AbdoPaininPregnancy'><input type='checkbox' name='chk_ObsandGynae' id='chk_ObsandGynae_AbdoPaininPregnancy' value='Abdo Pain in Pregnancy' class='custom-control-input chk_ObsandGynae'><label for='chk_ObsandGynae_AbdoPaininPregnancy' class='custom-control-label'>Abdo Pain in Pregnancy</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_ObsandGynae_EctopicPregancy'><input type='checkbox' name='chk_ObsandGynae' id='chk_ObsandGynae_EctopicPregancy' value='Ectopic Pregancy' class='custom-control-input chk_ObsandGynae'><label for='chk_ObsandGynae_EctopicPregancy' class='custom-control-label'>Ectopic Pregancy</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_ObsandGynae_HypermesisinPreganancy'><input type='checkbox' name='chk_ObsandGynae' id='chk_ObsandGynae_HypermesisinPreganancy' value='Hypermesis in Preganancy' class='custom-control-input chk_ObsandGynae'><label for='chk_ObsandGynae_HypermesisinPreganancy' class='custom-control-label'>Hypermesis in Preganancy</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_ObsandGynae_OvarianCyst'><input type='checkbox' name='chk_ObsandGynae' id='chk_ObsandGynae_OvarianCyst' value='Ovarian Cyst' class='custom-control-input chk_ObsandGynae'><label for='chk_ObsandGynae_OvarianCyst' class='custom-control-label'>Ovarian Cyst</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_ObsandGynae_PostOpProblem'><input type='checkbox' name='chk_ObsandGynae' id='chk_ObsandGynae_PostOpProblem' value='Post-Op Problem' class='custom-control-input chk_ObsandGynae'><label for='chk_ObsandGynae_PostOpProblem' class='custom-control-label'>Post-Op Problem</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_ObsandGynae_PVBleedinginPregancy'><input type='checkbox' name='chk_ObsandGynae' id='chk_ObsandGynae_PVBleedinginPregancy' value='PV Bleeding in Pregancy' class='custom-control-input chk_ObsandGynae'><label for='chk_ObsandGynae_PVBleedinginPregancy' class='custom-control-label'>PV Bleeding in Pregancy</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_ObsandGynae_SuspectedEptopicPregancy'><input type='checkbox' name='chk_ObsandGynae' id='chk_ObsandGynae_SuspectedEptopicPregancy' value='Suspected Eptopic Pregancy' class='custom-control-input chk_ObsandGynae'><label for='chk_ObsandGynae_SuspectedEptopicPregancy' class='custom-control-label'>Suspected Eptopic Pregancy</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_ObsandGynae_OtherGynaecologicalCondition'><input type='checkbox' name='chk_ObsandGynae' id='chk_ObsandGynae_OtherGynaecologicalCondition' value='Other Gynaecological Condition' class='custom-control-input chk_ObsandGynae'><label for='chk_ObsandGynae_OtherGynaecologicalCondition' class='custom-control-label'>Other Gynaecological Condition</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_ObsandGynae_OtherObstetricCondition'><input type='checkbox' name='chk_ObsandGynae' id='chk_ObsandGynae_OtherObstetricCondition' value='Other Obstetric Condition' class='custom-control-input chk_ObsandGynae'><label for='chk_ObsandGynae_OtherObstetricCondition' class='custom-control-label'>Other Obstetric Condition</label></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='Ophthalmology' class='row'>
+        <div id='inner_Ophthalmology' class='col-md-12 '>
+          <h4>Ophthalmology</h4>
+          <div class="row">
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Ophthalmology_Conjunctivitis'><input type='checkbox' name='chk_Ophthalmology' id='chk_Ophthalmology_Conjunctivitis' value='Conjunctivitis' class='custom-control-input chk_Ophthalmology'><label for='chk_Ophthalmology_Conjunctivitis' class='custom-control-label'>Conjunctivitis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Ophthalmology_CornealAbrasion'><input type='checkbox' name='chk_Ophthalmology' id='chk_Ophthalmology_CornealAbrasion' value='Corneal Abrasion' class='custom-control-input chk_Ophthalmology'><label for='chk_Ophthalmology_CornealAbrasion' class='custom-control-label'>Corneal Abrasion</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Ophthalmology_CornealForeignBody'><input type='checkbox' name='chk_Ophthalmology' id='chk_Ophthalmology_CornealForeignBody' value='Corneal Foreign Body' class='custom-control-input chk_Ophthalmology'><label for='chk_Ophthalmology_CornealForeignBody' class='custom-control-label'>Corneal Foreign Body</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Ophthalmology_RedEye'><input type='checkbox' name='chk_Ophthalmology' id='chk_Ophthalmology_RedEye' value='Red Eye' class='custom-control-input chk_Ophthalmology'><label for='chk_Ophthalmology_RedEye' class='custom-control-label'>Red Eye</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Ophthalmology_RetinalDetachment'><input type='checkbox' name='chk_Ophthalmology' id='chk_Ophthalmology_RetinalDetachment' value='Retinal Detachment' class='custom-control-input chk_Ophthalmology'><label for='chk_Ophthalmology_RetinalDetachment' class='custom-control-label'>Retinal Detachment</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Ophthalmology_OtherOphthalmologicalCondition'><input type='checkbox' name='chk_Ophthalmology' id='chk_Ophthalmology_OtherOphthalmologicalCondition' value='Other Ophthalmological Condition' class='custom-control-input chk_Ophthalmology'><label for='chk_Ophthalmology_OtherOphthalmologicalCondition' class='custom-control-label'>Other Ophthalmological Condition</label></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='Orthopaedics' class='row'>
+        <div id='inner_Orthopaedics' class='col-md-12 '>
+          <h4>Orthopaedics</h4>
+          <div class="row">
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Orthopaedics_AtraumaticBackPain'><input type='checkbox' name='chk_Orthopaedics' id='chk_Orthopaedics_AtraumaticBackPain' value='Atraumatic Back Pain' class='custom-control-input chk_Orthopaedics'><label for='chk_Orthopaedics_AtraumaticBackPain' class='custom-control-label'>Atraumatic Back Pain</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Orthopaedics_Bursitis'><input type='checkbox' name='chk_Orthopaedics' id='chk_Orthopaedics_Bursitis' value='Bursitis' class='custom-control-input chk_Orthopaedics'><label for='chk_Orthopaedics_Bursitis' class='custom-control-label'>Bursitis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Orthopaedics_CartliageInjuryKnee'><input type='checkbox' name='chk_Orthopaedics' id='chk_Orthopaedics_CartliageInjuryKnee' value='Cartliage Injury - Knee ' class='custom-control-input chk_Orthopaedics'><label for='chk_Orthopaedics_CartliageInjuryKnee' class='custom-control-label'>Cartliage Injury - Knee </label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Orthopaedics_CaudaEquina'><input type='checkbox' name='chk_Orthopaedics' id='chk_Orthopaedics_CaudaEquina' value='Cauda Equina' class='custom-control-input chk_Orthopaedics'><label for='chk_Orthopaedics_CaudaEquina' class='custom-control-label'>Cauda Equina</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Orthopaedics_Costochondritis'><input type='checkbox' name='chk_Orthopaedics' id='chk_Orthopaedics_Costochondritis' value='Costochondritis' class='custom-control-input chk_Orthopaedics'><label for='chk_Orthopaedics_Costochondritis' class='custom-control-label'>Costochondritis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Orthopaedics_LigamentInjuryKnee'><input type='checkbox' name='chk_Orthopaedics' id='chk_Orthopaedics_LigamentInjuryKnee' value='Ligament Injury - Knee' class='custom-control-input chk_Orthopaedics'><label for='chk_Orthopaedics_LigamentInjuryKnee' class='custom-control-label'>Ligament Injury - Knee</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Orthopaedics_LockedKnee'><input type='checkbox' name='chk_Orthopaedics' id='chk_Orthopaedics_LockedKnee' value='Locked Knee' class='custom-control-input chk_Orthopaedics'><label for='chk_Orthopaedics_LockedKnee' class='custom-control-label'>Locked Knee</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Orthopaedics_Osteomyelitis'><input type='checkbox' name='chk_Orthopaedics' id='chk_Orthopaedics_Osteomyelitis' value='Osteomyelitis' class='custom-control-input chk_Orthopaedics'><label for='chk_Orthopaedics_Osteomyelitis' class='custom-control-label'>Osteomyelitis</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Orthopaedics_PostOpProblem'><input type='checkbox' name='chk_Orthopaedics' id='chk_Orthopaedics_PostOpProblem' value='Post-Op Problem' class='custom-control-input chk_Orthopaedics'><label for='chk_Orthopaedics_PostOpProblem' class='custom-control-label'>Post-Op Problem</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Orthopaedics_Sciatica'><input type='checkbox' name='chk_Orthopaedics' id='chk_Orthopaedics_Sciatica' value='Sciatica' class='custom-control-input chk_Orthopaedics'><label for='chk_Orthopaedics_Sciatica' class='custom-control-label'>Sciatica</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Orthopaedics_SepticArthritis'><input type='checkbox' name='chk_Orthopaedics' id='chk_Orthopaedics_SepticArthritis' value='Septic Arthritis' class='custom-control-input chk_Orthopaedics'><label for='chk_Orthopaedics_SepticArthritis' class='custom-control-label'>Septic Arthritis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Orthopaedics_OtherOrthopaedicCondition'><input type='checkbox' name='chk_Orthopaedics' id='chk_Orthopaedics_OtherOrthopaedicCondition' value='Other Orthopaedic Condition' class='custom-control-input chk_Orthopaedics'><label for='chk_Orthopaedics_OtherOrthopaedicCondition' class='custom-control-label'>Other Orthopaedic Condition</label></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id='Psychiatry' class='row'>
+        <div id='inner_Psychiatry' class='col-md-12 '>
+          <h4>Psychiatry</h4>
+          <div class="row">
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Psychiatry_AlcoholAbuse'><input type='checkbox' name='chk_Psychiatry' id='chk_Psychiatry_AlcoholAbuse' value='Alcohol Abuse' class='custom-control-input chk_Psychiatry'><label for='chk_Psychiatry_AlcoholAbuse' class='custom-control-label'>Alcohol Abuse</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Psychiatry_Anxiety'><input type='checkbox' name='chk_Psychiatry' id='chk_Psychiatry_Anxiety' value='Anxiety' class='custom-control-input chk_Psychiatry'><label for='chk_Psychiatry_Anxiety' class='custom-control-label'>Anxiety</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Psychiatry_Depression'><input type='checkbox' name='chk_Psychiatry' id='chk_Psychiatry_Depression' value='Depression' class='custom-control-input chk_Psychiatry'><label for='chk_Psychiatry_Depression' class='custom-control-label'>Depression</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Psychiatry_DrugAbuse'><input type='checkbox' name='chk_Psychiatry' id='chk_Psychiatry_DrugAbuse' value='Drug Abuse' class='custom-control-input chk_Psychiatry'><label for='chk_Psychiatry_DrugAbuse' class='custom-control-label'>Drug Abuse</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Psychiatry_Overdose'><input type='checkbox' name='chk_Psychiatry' id='chk_Psychiatry_Overdose' value='Overdose' class='custom-control-input chk_Psychiatry'><label for='chk_Psychiatry_Overdose' class='custom-control-label'>Overdose</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Psychiatry_Paranoia'><input type='checkbox' name='chk_Psychiatry' id='chk_Psychiatry_Paranoia' value='Paranoia' class='custom-control-input chk_Psychiatry'><label for='chk_Psychiatry_Paranoia' class='custom-control-label'>Paranoia</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Psychiatry_PoisoningControlledDrugs'><input type='checkbox' name='chk_Psychiatry' id='chk_Psychiatry_PoisoningControlledDrugs' value='Poisoning - Controlled Drugs' class='custom-control-input chk_Psychiatry'><label for='chk_Psychiatry_PoisoningControlledDrugs' class='custom-control-label'>Poisoning - Controlled Drugs</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Psychiatry_PoisoningOther'><input type='checkbox' name='chk_Psychiatry' id='chk_Psychiatry_PoisoningOther' value='Poisoning - Other' class='custom-control-input chk_Psychiatry'><label for='chk_Psychiatry_PoisoningOther' class='custom-control-label'>Poisoning - Other</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Psychiatry_PoisoningPrescriptiveDrugs'><input type='checkbox' name='chk_Psychiatry' id='chk_Psychiatry_PoisoningPrescriptiveDrugs' value='Poisoning - Prescriptive Drugs' class='custom-control-input chk_Psychiatry'><label for='chk_Psychiatry_PoisoningPrescriptiveDrugs' class='custom-control-label'>Poisoning - Prescriptive Drugs</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Psychiatry_PoisoningProprietryDrugs'><input type='checkbox' name='chk_Psychiatry' id='chk_Psychiatry_PoisoningProprietryDrugs' value='Poisoning - Proprietry Drugs' class='custom-control-input chk_Psychiatry'><label for='chk_Psychiatry_PoisoningProprietryDrugs' class='custom-control-label'>Poisoning - Proprietry Drugs</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Psychiatry_Suicidal'><input type='checkbox' name='chk_Psychiatry' id='chk_Psychiatry_Suicidal' value='Suicidal' class='custom-control-input chk_Psychiatry'><label for='chk_Psychiatry_Suicidal' class='custom-control-label'>Suicidal</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Psychiatry_OtherPsychiatricCondition'><input type='checkbox' name='chk_Psychiatry' id='chk_Psychiatry_OtherPsychiatricCondition' value='Other Psychiatric Condition' class='custom-control-input chk_Psychiatry'><label for='chk_Psychiatry_OtherPsychiatricCondition' class='custom-control-label'>Other Psychiatric Condition</label></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='Surgery' class='row'>
+        <div id='inner_Surgery' class='col-md-12 '>
+          <h4>Surgery</h4>
+          <div class="row">
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_AnalProblem'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_AnalProblem' value='Anal Problem' class='custom-control-input chk_Surgery'><label for='chk_Surgery_AnalProblem' class='custom-control-label'>Anal Problem</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_Appendicitis'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_Appendicitis' value='Appendicitis' class='custom-control-input chk_Surgery'><label for='chk_Surgery_Appendicitis' class='custom-control-label'>Appendicitis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_BiliaryColicorCholescystitis'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_BiliaryColicorCholescystitis' value='Biliary Colic or Cholescystitis' class='custom-control-input chk_Surgery'><label for='chk_Surgery_BiliaryColicorCholescystitis' class='custom-control-label'>Biliary Colic or Cholescystitis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_BowelObstruction'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_BowelObstruction' value='Bowel Obstruction' class='custom-control-input chk_Surgery'><label for='chk_Surgery_BowelObstruction' class='custom-control-label'>Bowel Obstruction</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_Diverticulitis'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_Diverticulitis' value='Diverticulitis' class='custom-control-input chk_Surgery'><label for='chk_Surgery_Diverticulitis' class='custom-control-label'>Diverticulitis</label></div></div>
+
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_Hernia'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_Hernia' value='Hernia' class='custom-control-input chk_Surgery'><label for='chk_Surgery_Hernia' class='custom-control-label'>Hernia</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_IschaemicBowel'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_IschaemicBowel' value='Ischaemic Bowel' class='custom-control-input chk_Surgery'><label for='chk_Surgery_IschaemicBowel' class='custom-control-label'>Ischaemic Bowel</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_IschaemicLimb'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_IschaemicLimb' value='Ischaemic Limb' class='custom-control-input chk_Surgery'><label for='chk_Surgery_IschaemicLimb' class='custom-control-label'>Ischaemic Limb</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_LowerGIBleed'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_LowerGIBleed' value='Lower GI Bleed' class='custom-control-input chk_Surgery'><label for='chk_Surgery_LowerGIBleed' class='custom-control-label'>Lower GI Bleed</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_Pancreatitis'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_Pancreatitis' value='Pancreatitis' class='custom-control-input chk_Surgery'><label for='chk_Surgery_Pancreatitis' class='custom-control-label'>Pancreatitis</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_Perforation'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_Perforation' value='Perforation' class='custom-control-input chk_Surgery'><label for='chk_Surgery_Perforation' class='custom-control-label'>Perforation</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_PostOpProblem'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_PostOpProblem' value='Post-Op Problem' class='custom-control-input chk_Surgery'><label for='chk_Surgery_PostOpProblem' class='custom-control-label'>Post-Op Problem</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_SuspectedAppendicitis'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_SuspectedAppendicitis' value='Suspected Appendicitis' class='custom-control-input chk_Surgery'><label for='chk_Surgery_SuspectedAppendicitis' class='custom-control-label'>Suspected Appendicitis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Surgery_OtherSurgicalCondition'><input type='checkbox' name='chk_Surgery' id='chk_Surgery_OtherSurgicalCondition' value='Other Surgical Condition' class='custom-control-input chk_Surgery'><label for='chk_Surgery_OtherSurgicalCondition' class='custom-control-label'>Other Surgical Condition</label></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='Urology' class='row'>
+        <div id='inner_Urology' class='col-md-12 '>
+          <h4>Urology</h4>
+          <div class="row">
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Urology_CatheterProblem'><input type='checkbox' name='chk_Urology' id='chk_Urology_CatheterProblem' value='Catheter Problem' class='custom-control-input chk_Urology'><label for='chk_Urology_CatheterProblem' class='custom-control-label'>Catheter Problem</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Urology_Epididymoorchitis'><input type='checkbox' name='chk_Urology' id='chk_Urology_Epididymoorchitis' value='Epididymo-orchitis' class='custom-control-input chk_Urology'><label for='chk_Urology_Epididymoorchitis' class='custom-control-label'>Epididymo-orchitis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Urology_Paraphimosis'><input type='checkbox' name='chk_Urology' id='chk_Urology_Paraphimosis' value='Paraphimosis' class='custom-control-input chk_Urology'><label for='chk_Urology_Paraphimosis' class='custom-control-label'>Paraphimosis</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Urology_Pyelonephritis'><input type='checkbox' name='chk_Urology' id='chk_Urology_Pyelonephritis' value='Pyelonephritis' class='custom-control-input chk_Urology'><label for='chk_Urology_Pyelonephritis' class='custom-control-label'>Pyelonephritis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Urology_RenalColic'><input type='checkbox' name='chk_Urology' id='chk_Urology_RenalColic' value='Renal Colic' class='custom-control-input chk_Urology'><label for='chk_Urology_RenalColic' class='custom-control-label'>Renal Colic</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Urology_TesticularTorsion'><input type='checkbox' name='chk_Urology' id='chk_Urology_TesticularTorsion' value='Testicular Torsion' class='custom-control-input chk_Urology'><label for='chk_Urology_TesticularTorsion' class='custom-control-label'>Testicular Torsion</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Urology_UrinaryRetention'><input type='checkbox' name='chk_Urology' id='chk_Urology_UrinaryRetention' value='Urinary Retention' class='custom-control-input chk_Urology'><label for='chk_Urology_UrinaryRetention' class='custom-control-label'>Urinary Retention</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Urology_UTI'><input type='checkbox' name='chk_Urology' id='chk_Urology_UTI' value='UTI' class='custom-control-input chk_Urology'><label for='chk_Urology_UTI' class='custom-control-label'>UTI</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Urology_OtherUroligicalCondition'><input type='checkbox' name='chk_Urology' id='chk_Urology_OtherUroligicalCondition' value='Other Uroligical Condition' class='custom-control-input chk_Urology'><label for='chk_Urology_OtherUroligicalCondition' class='custom-control-label'>Other Uroligical Condition</label></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id='OtherCategory' class='row'>
+        <div id='inner_OtherCategory' class='col-md-12 '>
+          <h4>Other Category</h4>
+          <div class="row">
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_OtherCategory_NAD'><input type='checkbox' name='chk_OtherCategory' id='chk_OtherCategory_NAD' value='NAD' class='custom-control-input chk_OtherCategory'><label for='chk_OtherCategory_NAD' class='custom-control-label'>NAD</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_OtherCategory_Didnotwait'><input type='checkbox' name='chk_OtherCategory' id='chk_OtherCategory_Didnotwait' value='Did not wait' class='custom-control-input chk_OtherCategory'><label for='chk_OtherCategory_Didnotwait' class='custom-control-label'>Did not wait</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_OtherCategory_Referredtospecialty'><input type='checkbox' name='chk_OtherCategory' id='chk_OtherCategory_Referredtospecialty' value='Referred to specialty' class='custom-control-input chk_OtherCategory'><label for='chk_OtherCategory_Referredtospecialty' class='custom-control-label'>Referred to specialty</label></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id='AnatomicalAreaLaterality' class='row '>
+    <div id='inner_AnatomicalAreaLaterality' class='col-md-12'>
+      <!-- <h3>Anatomical Area and Laterality</h3> -->
+      <div id='AnatomicalArea' class='row'><div id='inner_AnatomicalArea' class='col-md-12 '>	</div></div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div id='HeadandNeck' class='row'>
+            <div id='inner_HeadandNeck' class='col-md-12 '>
+              <h4>Head and Neck</h4>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_HeadandNeck_Brain'><input type='checkbox' name='chk_HeadandNeck' id='chk_HeadandNeck_Brain' value='Brain' class='custom-control-input chk_HeadandNeck'><label for='chk_HeadandNeck_Brain' class='custom-control-label'>Brain</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_HeadandNeck_Ear'><input type='checkbox' name='chk_HeadandNeck' id='chk_HeadandNeck_Ear' value='Ear ' class='custom-control-input chk_HeadandNeck'><label for='chk_HeadandNeck_Ear' class='custom-control-label'>Ear </label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_HeadandNeck_Eyes'><input type='checkbox' name='chk_HeadandNeck' id='chk_HeadandNeck_Eyes' value='Eyes' class='custom-control-input chk_HeadandNeck'><label for='chk_HeadandNeck_Eyes' class='custom-control-label'>Eyes</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_HeadandNeck_Face'><input type='checkbox' name='chk_HeadandNeck' id='chk_HeadandNeck_Face' value='Face' class='custom-control-input chk_HeadandNeck'><label for='chk_HeadandNeck_Face' class='custom-control-label'>Face</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_HeadandNeck_Head'><input type='checkbox' name='chk_HeadandNeck' id='chk_HeadandNeck_Head' value='Head' class='custom-control-input chk_HeadandNeck'><label for='chk_HeadandNeck_Head' class='custom-control-label'>Head</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_HeadandNeck_MouthorJaw'><input type='checkbox' name='chk_HeadandNeck' id='chk_HeadandNeck_MouthorJaw' value='Mouth or Jaw' class='custom-control-input chk_HeadandNeck'><label for='chk_HeadandNeck_MouthorJaw' class='custom-control-label'>Mouth or Jaw</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_HeadandNeck_Neck'><input type='checkbox' name='chk_HeadandNeck' id='chk_HeadandNeck_Neck' value='Neck' class='custom-control-input chk_HeadandNeck'><label for='chk_HeadandNeck_Neck' class='custom-control-label'>Neck</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_HeadandNeck_Nose'><input type='checkbox' name='chk_HeadandNeck' id='chk_HeadandNeck_Nose' value='Nose' class='custom-control-input chk_HeadandNeck'><label for='chk_HeadandNeck_Nose' class='custom-control-label'>Nose</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_HeadandNeck_Throat'><input type='checkbox' name='chk_HeadandNeck' id='chk_HeadandNeck_Throat' value='Throat' class='custom-control-input chk_HeadandNeck'><label for='chk_HeadandNeck_Throat' class='custom-control-label'>Throat</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div id='UpperLimb' class='row'>
+            <div id='inner_UpperLimb' class='col-md-12 '>
+              <h4>Upper Limb</h4>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_UpperLimb_Elbow'><input type='checkbox' name='chk_UpperLimb' id='chk_UpperLimb_Elbow' value='Elbow' class='custom-control-input chk_UpperLimb'><label for='chk_UpperLimb_Elbow' class='custom-control-label'>Elbow</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_UpperLimb_Finger'><input type='checkbox' name='chk_UpperLimb' id='chk_UpperLimb_Finger' value='Finger' class='custom-control-input chk_UpperLimb'><label for='chk_UpperLimb_Finger' class='custom-control-label'>Finger</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_UpperLimb_Forearm'><input type='checkbox' name='chk_UpperLimb' id='chk_UpperLimb_Forearm' value='Forearm' class='custom-control-input chk_UpperLimb'><label for='chk_UpperLimb_Forearm' class='custom-control-label'>Forearm</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_UpperLimb_Hand'><input type='checkbox' name='chk_UpperLimb' id='chk_UpperLimb_Hand' value='Hand' class='custom-control-input chk_UpperLimb'><label for='chk_UpperLimb_Hand' class='custom-control-label'>Hand</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_UpperLimb_Shoulder'><input type='checkbox' name='chk_UpperLimb' id='chk_UpperLimb_Shoulder' value='Shoulder' class='custom-control-input chk_UpperLimb'><label for='chk_UpperLimb_Shoulder' class='custom-control-label'>Shoulder</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_UpperLimb_Thumb'><input type='checkbox' name='chk_UpperLimb' id='chk_UpperLimb_Thumb' value='Thumb' class='custom-control-input chk_UpperLimb'><label for='chk_UpperLimb_Thumb' class='custom-control-label'>Thumb</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_UpperLimb_UpperArm'><input type='checkbox' name='chk_UpperLimb' id='chk_UpperLimb_UpperArm' value='Upper Arm' class='custom-control-input chk_UpperLimb'><label for='chk_UpperLimb_UpperArm' class='custom-control-label'>Upper Arm</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_UpperLimb_Wrist'><input type='checkbox' name='chk_UpperLimb' id='chk_UpperLimb_Wrist' value='Wrist' class='custom-control-input chk_UpperLimb'><label for='chk_UpperLimb_Wrist' class='custom-control-label'>Wrist</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div id='Trunk' class='row'>
+            <div id='inner_Trunk' class='col-md-12 '>
+              <h4>Trunk</h4>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Trunk_Abdomen'><input type='checkbox' name='chk_Trunk' id='chk_Trunk_Abdomen' value='Abdomen' class='custom-control-input chk_Trunk'><label for='chk_Trunk_Abdomen' class='custom-control-label'>Abdomen</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Trunk_AnoRectal'><input type='checkbox' name='chk_Trunk' id='chk_Trunk_AnoRectal' value='Ano / Rectal' class='custom-control-input chk_Trunk'><label for='chk_Trunk_AnoRectal' class='custom-control-label'>Ano / Rectal</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Trunk_Breast'><input type='checkbox' name='chk_Trunk' id='chk_Trunk_Breast' value='Breast' class='custom-control-input chk_Trunk'><label for='chk_Trunk_Breast' class='custom-control-label'>Breast</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Trunk_Buttocks'><input type='checkbox' name='chk_Trunk' id='chk_Trunk_Buttocks' value='Buttocks' class='custom-control-input chk_Trunk'><label for='chk_Trunk_Buttocks' class='custom-control-label'>Buttocks</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Trunk_CSpine'><input type='checkbox' name='chk_Trunk' id='chk_Trunk_CSpine' value='C-Spine' class='custom-control-input chk_Trunk'><label for='chk_Trunk_CSpine' class='custom-control-label'>C-Spine</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Trunk_Chest'><input type='checkbox' name='chk_Trunk' id='chk_Trunk_Chest' value='Chest' class='custom-control-input chk_Trunk'><label for='chk_Trunk_Chest' class='custom-control-label'>Chest</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Trunk_Genitalia'><input type='checkbox' name='chk_Trunk' id='chk_Trunk_Genitalia' value='Genitalia' class='custom-control-input chk_Trunk'><label for='chk_Trunk_Genitalia' class='custom-control-label'>Genitalia</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Trunk_LSpine'><input type='checkbox' name='chk_Trunk' id='chk_Trunk_LSpine' value='L-Spine' class='custom-control-input chk_Trunk'><label for='chk_Trunk_LSpine' class='custom-control-label'>L-Spine</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Trunk_Pelvis'><input type='checkbox' name='chk_Trunk' id='chk_Trunk_Pelvis' value='Pelvis' class='custom-control-input chk_Trunk'><label for='chk_Trunk_Pelvis' class='custom-control-label'>Pelvis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Trunk_TSpine'><input type='checkbox' name='chk_Trunk' id='chk_Trunk_TSpine' value='T-Spine' class='custom-control-input chk_Trunk'><label for='chk_Trunk_TSpine' class='custom-control-label'>T-Spine</label></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div id='LowerLimb' class='row'>
+            <div id='inner_LowerLimb' class='col-md-12 '>
+              <h4>Lower Limb</h4>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LowerLimb_Ankle'><input type='checkbox' name='chk_LowerLimb' id='chk_LowerLimb_Ankle' value='Ankle' class='custom-control-input chk_LowerLimb'><label for='chk_LowerLimb_Ankle' class='custom-control-label'>Ankle</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LowerLimb_Foot'><input type='checkbox' name='chk_LowerLimb' id='chk_LowerLimb_Foot' value='Foot' class='custom-control-input chk_LowerLimb'><label for='chk_LowerLimb_Foot' class='custom-control-label'>Foot</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LowerLimb_Groin'><input type='checkbox' name='chk_LowerLimb' id='chk_LowerLimb_Groin' value='Groin' class='custom-control-input chk_LowerLimb'><label for='chk_LowerLimb_Groin' class='custom-control-label'>Groin</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LowerLimb_Hip'><input type='checkbox' name='chk_LowerLimb' id='chk_LowerLimb_Hip' value='Hip' class='custom-control-input chk_LowerLimb'><label for='chk_LowerLimb_Hip' class='custom-control-label'>Hip</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LowerLimb_Knee'><input type='checkbox' name='chk_LowerLimb' id='chk_LowerLimb_Knee' value='Knee' class='custom-control-input chk_LowerLimb'><label for='chk_LowerLimb_Knee' class='custom-control-label'>Knee</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LowerLimb_LowerLeg'><input type='checkbox' name='chk_LowerLimb' id='chk_LowerLimb_LowerLeg' value='Lower Leg' class='custom-control-input chk_LowerLimb'><label for='chk_LowerLimb_LowerLeg' class='custom-control-label'>Lower Leg</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LowerLimb_Thigh'><input type='checkbox' name='chk_LowerLimb' id='chk_LowerLimb_Thigh' value='Thigh' class='custom-control-input chk_LowerLimb'><label for='chk_LowerLimb_Thigh' class='custom-control-label'>Thigh</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LowerLimb_Toe'><input type='checkbox' name='chk_LowerLimb' id='chk_LowerLimb_Toe' value='Toe' class='custom-control-input chk_LowerLimb'><label for='chk_LowerLimb_Toe' class='custom-control-label'>Toe</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id='Laterallity' class='row light-green-color'>
+        <div id='inner_Laterallity' class='col-md-12 '>
+          <h4>Laterallity</h4>
+          <div class="row">
+            <div class="col-md-3">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Laterallity_Left'><input type='checkbox' name='chk_Laterallity' id='chk_Laterallity_Left' value='Left' class='custom-control-input chk_Laterallity'><label for='chk_Laterallity_Left' class='custom-control-label'>Left</label></div></div>
+            </div>
+            <div class="col-md-3">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Laterallity_Right'><input type='checkbox' name='chk_Laterallity' id='chk_Laterallity_Right' value='Right' class='custom-control-input chk_Laterallity'><label for='chk_Laterallity_Right' class='custom-control-label'>Right</label></div></div>
+            </div>
+            <div class="col-md-3">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Laterallity_Bilateral'><input type='checkbox' name='chk_Laterallity' id='chk_Laterallity_Bilateral' value='Bilateral' class='custom-control-input chk_Laterallity'><label for='chk_Laterallity_Bilateral' class='custom-control-label'>Bilateral</label></div></div>
+            </div>
+            <div class="col-md-3">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Laterallity_NotApplicable'><input type='checkbox' name='chk_Laterallity' id='chk_Laterallity_NotApplicable' value='Not Applicable' class='custom-control-input chk_Laterallity'><label for='chk_Laterallity_NotApplicable' class='custom-control-label'>Not Applicable</label></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <a name="ad_Investigations"></a>
+  <div id='Investigations' class='row'>
+    <div id='inner_Investigations' class='col-md-12'>
+      <h3>Investigations</h3>
+      <div id='Investigation' class='row'>
+        <div id='inner_Investigation' class='col-md-12 '>
+          <div class="row">
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_ABG'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_ABG' value='ABG' class='custom-control-input chk_Investigation'><label for='chk_Investigation_ABG' class='custom-control-label'>ABG</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_Biochemistry'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_Biochemistry' value='Biochemistry' class='custom-control-input chk_Investigation'><label for='chk_Investigation_Biochemistry' class='custom-control-label'>Biochemistry</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_BloodCultures'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_BloodCultures' value='Blood Cultures' class='custom-control-input chk_Investigation'><label for='chk_Investigation_BloodCultures' class='custom-control-label'>Blood Cultures</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_CardiacEnzymes'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_CardiacEnzymes' value='Cardiac Enzymes' class='custom-control-input chk_Investigation'><label for='chk_Investigation_CardiacEnzymes' class='custom-control-label'>Cardiac Enzymes</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_ClottingStudies'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_ClottingStudies' value='Clotting Studies' class='custom-control-input chk_Investigation'><label for='chk_Investigation_ClottingStudies' class='custom-control-label'>Clotting Studies</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_CrossMatchorXMatch'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_CrossMatchorXMatch' value='X-Match' class='custom-control-input chk_Investigation'><label for='chk_Investigation_CrossMatchorXMatch' class='custom-control-label'>X-Match</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_CT'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_CT' value='CT' class='custom-control-input chk_Investigation'><label for='chk_Investigation_CT' class='custom-control-label'>CT</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_ECG'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_ECG' value='ECG' class='custom-control-input chk_Investigation'><label for='chk_Investigation_ECG' class='custom-control-label'>ECG</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_GroupandSave'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_GroupandSave' value='Group and Save' class='custom-control-input chk_Investigation'><label for='chk_Investigation_GroupandSave' class='custom-control-label'>Group and Save</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_Haematology'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_Haematology' value='Haematology' class='custom-control-input chk_Investigation'><label for='chk_Investigation_Haematology' class='custom-control-label'>Haematology</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_MRI'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_MRI' value='MRI' class='custom-control-input chk_Investigation'><label for='chk_Investigation_MRI' class='custom-control-label'>MRI</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_PregancyTest'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_PregancyTest' value='Pregancy Test' class='custom-control-input chk_Investigation'><label for='chk_Investigation_PregancyTest' class='custom-control-label'>Pregancy Test</label></div></div>
+            </div>
+            <div class="col-md-4">
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_Toxicology'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_Toxicology' value='Toxicology' class='custom-control-input chk_Investigation'><label for='chk_Investigation_Toxicology' class='custom-control-label'>Toxicology</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_Urinalysis'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_Urinalysis' value='Urinalysis' class='custom-control-input chk_Investigation'><label for='chk_Investigation_Urinalysis' class='custom-control-label'>Urinalysis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_USS'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_USS' value='USS' class='custom-control-input chk_Investigation'><label for='chk_Investigation_USS' class='custom-control-label'>USS</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_XRay'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_XRay' value='X-Ray' class='custom-control-input chk_Investigation'><label for='chk_Investigation_XRay' class='custom-control-label'>X-Ray</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_AnyOtherInvrstigation'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_AnyOtherInvrstigation' value='Any Other Invrstigation' class='custom-control-input chk_Investigation'><label for='chk_Investigation_AnyOtherInvrstigation' class='custom-control-label'>Any Other Investigation</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Investigation_None'><input type='checkbox' name='chk_Investigation' id='chk_Investigation_None' value='None' class='custom-control-input chk_Investigation'><label for='chk_Investigation_None' class='custom-control-label'>None</label></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <a name="ad_Treatments"></a>
+  <div id='Treatments' class='row'>
+    <div id='inner_Treatments' class='col-md-12'>
+      <h3>Treatments</h3>
+      <div class="row">
+        <div class="col-md-4">
+          <div id='MinorTreatments' class='row'>
+            <div id='inner_MinorTreatments' class='col-md-12 '>
+              <h4>Minor Treatments</h4>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorTreatments_WoundClean'><input type='checkbox' name='chk_MinorTreatments' id='chk_MinorTreatments_WoundClean' value='Wound Clean' class='custom-control-input chk_MinorTreatments'><label for='chk_MinorTreatments_WoundClean' class='custom-control-label'>Wound Clean</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorTreatments_DressingofMinorWoundBurn'><input type='checkbox' name='chk_MinorTreatments' id='chk_MinorTreatments_DressingofMinorWoundBurn' value='Dressing of Minor Wound / Burn' class='custom-control-input chk_MinorTreatments'><label for='chk_MinorTreatments_DressingofMinorWoundBurn' class='custom-control-label'>Dressing of Minor Wound / Burn</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorTreatments_DressingofMajorWoundBurn'><input type='checkbox' name='chk_MinorTreatments' id='chk_MinorTreatments_DressingofMajorWoundBurn' value='Dressing of Major Wound / Burn' class='custom-control-input chk_MinorTreatments'><label for='chk_MinorTreatments_DressingofMajorWoundBurn' class='custom-control-label'>Dressing of Major Wound / Burn</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorTreatments_Sling'><input type='checkbox' name='chk_MinorTreatments' id='chk_MinorTreatments_Sling' value='Sling' class='custom-control-input chk_MinorTreatments'><label for='chk_MinorTreatments_Sling' class='custom-control-label'>Sling</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorTreatments_BandageSupport'><input type='checkbox' name='chk_MinorTreatments' id='chk_MinorTreatments_BandageSupport' value='Bandage / Support' class='custom-control-input chk_MinorTreatments'><label for='chk_MinorTreatments_BandageSupport' class='custom-control-label'>Bandage / Support</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorTreatments_Splint'><input type='checkbox' name='chk_MinorTreatments' id='chk_MinorTreatments_Splint' value='Splint' class='custom-control-input chk_MinorTreatments'><label for='chk_MinorTreatments_Splint' class='custom-control-label'>Splint</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorTreatments_ApplicationofPOP'><input type='checkbox' name='chk_MinorTreatments' id='chk_MinorTreatments_ApplicationofPOP' value='Application of POP' class='custom-control-input chk_MinorTreatments'><label for='chk_MinorTreatments_ApplicationofPOP' class='custom-control-label'>Application of POP</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_MinorTreatments_RemovalofPOP'><input type='checkbox' name='chk_MinorTreatments' id='chk_MinorTreatments_RemovalofPOP' value='Removal of POP' class='custom-control-input chk_MinorTreatments'><label for='chk_MinorTreatments_RemovalofPOP' class='custom-control-label'>Removal of POP</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_WoundClosures_Steristips'><input type='checkbox' name='chk_WoundClosures' id='chk_WoundClosures_Steristips' value='Steristips' class='custom-control-input chk_WoundClosures'><label for='chk_WoundClosures_Steristips' class='custom-control-label'>Steristips</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id='LifeSupport' class='row'>
+            <div id='inner_LifeSupport' class='col-md-12 '>
+              <h4>Life Support</h4>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LifeSupport_OralAirway'><input type='checkbox' name='chk_LifeSupport' id='chk_LifeSupport_OralAirway' value='Oral Airway' class='custom-control-input chk_LifeSupport'><label for='chk_LifeSupport_OralAirway' class='custom-control-label'>Oral Airway</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LifeSupport_NasalAirway'><input type='checkbox' name='chk_LifeSupport' id='chk_LifeSupport_NasalAirway' value='Nasal Airway' class='custom-control-input chk_LifeSupport'><label for='chk_LifeSupport_NasalAirway' class='custom-control-label'>Nasal Airway</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LifeSupport_BagValveMask'><input type='checkbox' name='chk_LifeSupport' id='chk_LifeSupport_BagValveMask' value='Bag Valve Mask' class='custom-control-input chk_LifeSupport'><label for='chk_LifeSupport_BagValveMask' class='custom-control-label'>Bag Valve Mask</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LifeSupport_CPR'><input type='checkbox' name='chk_LifeSupport' id='chk_LifeSupport_CPR' value='CPR' class='custom-control-input chk_LifeSupport'><label for='chk_LifeSupport_CPR' class='custom-control-label'>CPR</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LifeSupport_Defibrillation'><input type='checkbox' name='chk_LifeSupport' id='chk_LifeSupport_Defibrillation' value='Defibrillation' class='custom-control-input chk_LifeSupport'><label for='chk_LifeSupport_Defibrillation' class='custom-control-label'>Defibrillation</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LifeSupport_IntubationRSI'><input type='checkbox' name='chk_LifeSupport' id='chk_LifeSupport_IntubationRSI' value='Intubation / RSI' class='custom-control-input chk_LifeSupport'><label for='chk_LifeSupport_IntubationRSI' class='custom-control-label'>Intubation / RSI</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LifeSupport_ChestDrain'><input type='checkbox' name='chk_LifeSupport' id='chk_LifeSupport_ChestDrain' value='Chest Drain' class='custom-control-input chk_LifeSupport'><label for='chk_LifeSupport_ChestDrain' class='custom-control-label'>Chest Drain</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LifeSupport_Pericardiocentesis'><input type='checkbox' name='chk_LifeSupport' id='chk_LifeSupport_Pericardiocentesis' value='Pericardiocentesis' class='custom-control-input chk_LifeSupport'><label for='chk_LifeSupport_Pericardiocentesis' class='custom-control-label'>Pericardiocentesis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LifeSupport_CentralLine'><input type='checkbox' name='chk_LifeSupport' id='chk_LifeSupport_CentralLine' value='Central Line' class='custom-control-input chk_LifeSupport'><label for='chk_LifeSupport_CentralLine' class='custom-control-label'>Central Line</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LifeSupport_ArterialLine'><input type='checkbox' name='chk_LifeSupport' id='chk_LifeSupport_ArterialLine' value='Arterial Line' class='custom-control-input chk_LifeSupport'><label for='chk_LifeSupport_ArterialLine' class='custom-control-label'>Arterial Line</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LifeSupport_ExternalPlacing'><input type='checkbox' name='chk_LifeSupport' id='chk_LifeSupport_ExternalPlacing' value='External Placing' class='custom-control-input chk_LifeSupport'><label for='chk_LifeSupport_ExternalPlacing' class='custom-control-label'>External Placing</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_LifeSupport_ActiveRewarming'><input type='checkbox' name='chk_LifeSupport' id='chk_LifeSupport_ActiveRewarming' value='Active Rewarming' class='custom-control-input chk_LifeSupport'><label for='chk_LifeSupport_ActiveRewarming' class='custom-control-label'>Active Rewarming</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id='Medication' class='row'>
+            <div id='inner_Medication' class='col-md-12 '>
+              <h4>Medication</h4>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_NebuliserSpacer'><input type='checkbox' name='chk_Medication' id='chk_Medication_NebuliserSpacer' value='Nebuliser /Spacer' class='custom-control-input chk_Medication'><label for='chk_Medication_NebuliserSpacer' class='custom-control-label'>Nebuliser /Spacer</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_OralMedication'><input type='checkbox' name='chk_Medication' id='chk_Medication_OralMedication' value='Oral Medication' class='custom-control-input chk_Medication'><label for='chk_Medication_OralMedication' class='custom-control-label'>Oral Medication</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_IVDrug'><input type='checkbox' name='chk_Medication' id='chk_Medication_IVDrug' value='IV Drug' class='custom-control-input chk_Medication'><label for='chk_Medication_IVDrug' class='custom-control-label'>IV Drug</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_IMDrug'><input type='checkbox' name='chk_Medication' id='chk_Medication_IMDrug' value='IM Drug' class='custom-control-input chk_Medication'><label for='chk_Medication_IMDrug' class='custom-control-label'>IM Drug</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_SCDrug'><input type='checkbox' name='chk_Medication' id='chk_Medication_SCDrug' value='S/C Drug' class='custom-control-input chk_Medication'><label for='chk_Medication_SCDrug' class='custom-control-label'>S/C Drug</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_PRDrug'><input type='checkbox' name='chk_Medication' id='chk_Medication_PRDrug' value='PR Drug' class='custom-control-input chk_Medication'><label for='chk_Medication_PRDrug' class='custom-control-label'>PR Drug</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_SLDrug'><input type='checkbox' name='chk_Medication' id='chk_Medication_SLDrug' value='S/L Drug' class='custom-control-input chk_Medication'><label for='chk_Medication_SLDrug' class='custom-control-label'>S/L Drug</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_IntranasalDrug'><input type='checkbox' name='chk_Medication' id='chk_Medication_IntranasalDrug' value='Intranasal Drug' class='custom-control-input chk_Medication'><label for='chk_Medication_IntranasalDrug' class='custom-control-label'>Intranasal Drug</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_EyeDrops'><input type='checkbox' name='chk_Medication' id='chk_Medication_EyeDrops' value='Eye Drops' class='custom-control-input chk_Medication'><label for='chk_Medication_EyeDrops' class='custom-control-label'>Eye Drops</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_EarDrops'><input type='checkbox' name='chk_Medication' id='chk_Medication_EarDrops' value='Ear Drops' class='custom-control-input chk_Medication'><label for='chk_Medication_EarDrops' class='custom-control-label'>Ear Drops</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_IVInfusionFluids'><input type='checkbox' name='chk_Medication' id='chk_Medication_IVInfusionFluids' value='IV Infusion - Fluids' class='custom-control-input chk_Medication'><label for='chk_Medication_IVInfusionFluids' class='custom-control-label'>IV Infusion - Fluids</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_Blood'><input type='checkbox' name='chk_Medication' id='chk_Medication_Blood' value='Blood' class='custom-control-input chk_Medication'><label for='chk_Medication_Blood' class='custom-control-label'>Blood</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_IVInfusionDrugs'><input type='checkbox' name='chk_Medication' id='chk_Medication_IVInfusionDrugs' value='IV Infusion - Drugs' class='custom-control-input chk_Medication'><label for='chk_Medication_IVInfusionDrugs' class='custom-control-label'>IV Infusion - Drugs</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Medication_TTOs'><input type='checkbox' name='chk_Medication' id='chk_Medication_TTOs' value='TTOs' class='custom-control-input chk_Medication'><label for='chk_Medication_TTOs' class='custom-control-label'>TTOs</label></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div id='Procedures' class='row'>
+            <div id='inner_Procedures' class='col-md-12 '>
+              <h4>Procedures</h4>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Procedures_RemovalofFB'><input type='checkbox' name='chk_Procedures' id='chk_Procedures_RemovalofFB' value='Removal of FB' class='custom-control-input chk_Procedures'><label for='chk_Procedures_RemovalofFB' class='custom-control-label'>Removal of FB</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Procedures_InicissionandDrainage'><input type='checkbox' name='chk_Procedures' id='chk_Procedures_InicissionandDrainage' value='Inicission and Drainage' class='custom-control-input chk_Procedures'><label for='chk_Procedures_InicissionandDrainage' class='custom-control-label'>Inicission and Drainage</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Procedures_MinorSurgery'><input type='checkbox' name='chk_Procedures' id='chk_Procedures_MinorSurgery' value='Minor Surgery' class='custom-control-input chk_Procedures'><label for='chk_Procedures_MinorSurgery' class='custom-control-label'>Minor Surgery</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Procedures_ManipulationofLowerLimb'><input type='checkbox' name='chk_Procedures' id='chk_Procedures_ManipulationofLowerLimb' value='Manipulation of Lower Limb' class='custom-control-input chk_Procedures'><label for='chk_Procedures_ManipulationofLowerLimb' class='custom-control-label'>Manipulation of Lower Limb</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Procedures_ManipulationofUpperLimb'><input type='checkbox' name='chk_Procedures' id='chk_Procedures_ManipulationofUpperLimb' value='Manipulation of Upper Limb' class='custom-control-input chk_Procedures'><label for='chk_Procedures_ManipulationofUpperLimb' class='custom-control-label'>Manipulation of Upper Limb</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Procedures_ReductionofDislocation'><input type='checkbox' name='chk_Procedures' id='chk_Procedures_ReductionofDislocation' value='Reduction of Dislocation' class='custom-control-input chk_Procedures'><label for='chk_Procedures_ReductionofDislocation' class='custom-control-label'>Reduction of Dislocation</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Procedures_EyeIrrigation'><input type='checkbox' name='chk_Procedures' id='chk_Procedures_EyeIrrigation' value='Eye Irrigation' class='custom-control-input chk_Procedures'><label for='chk_Procedures_EyeIrrigation' class='custom-control-label'>Eye Irrigation</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Procedures_EpistaxisControl'><input type='checkbox' name='chk_Procedures' id='chk_Procedures_EpistaxisControl' value='Epistaxis Control' class='custom-control-input chk_Procedures'><label for='chk_Procedures_EpistaxisControl' class='custom-control-label'>Epistaxis Control</label></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id='Monitoring' class='row'>
+            <div id='inner_Monitoring' class='col-md-12 '>
+              <h4>Monitoring</h4>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Monitoring_Oxygen'><input type='checkbox' name='chk_Monitoring' id='chk_Monitoring_Oxygen' value='Oxygen' class='custom-control-input chk_Monitoring'><label for='chk_Monitoring_Oxygen' class='custom-control-label'>Oxygen</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Monitoring_RecordingObservation'><input type='checkbox' name='chk_Monitoring' id='chk_Monitoring_RecordingObservation' value='Recording Observation' class='custom-control-input chk_Monitoring'><label for='chk_Monitoring_RecordingObservation' class='custom-control-label'>Recording Observation</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Monitoring_IVCannula'><input type='checkbox' name='chk_Monitoring' id='chk_Monitoring_IVCannula' value='IV Cannula' class='custom-control-input chk_Monitoring'><label for='chk_Monitoring_IVCannula' class='custom-control-label'>IV Cannula</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Monitoring_SerialECGs'><input type='checkbox' name='chk_Monitoring' id='chk_Monitoring_SerialECGs' value='Serial ECGs' class='custom-control-input chk_Monitoring'><label for='chk_Monitoring_SerialECGs' class='custom-control-label'>Serial ECGs</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Monitoring_CardiacMonitoring'><input type='checkbox' name='chk_Monitoring' id='chk_Monitoring_CardiacMonitoring' value='Cardiac Monitoring' class='custom-control-input chk_Monitoring'><label for='chk_Monitoring_CardiacMonitoring' class='custom-control-label'>Cardiac Monitoring</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Monitoring_HeadInjuryObservation'><input type='checkbox' name='chk_Monitoring' id='chk_Monitoring_HeadInjuryObservation' value='Head Injury Observation' class='custom-control-input chk_Monitoring'><label for='chk_Monitoring_HeadInjuryObservation' class='custom-control-label'>Head Injury Observation</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Monitoring_NIV'><input type='checkbox' name='chk_Monitoring' id='chk_Monitoring_NIV' value='NIV' class='custom-control-input chk_Monitoring'><label for='chk_Monitoring_NIV' class='custom-control-label'>NIV</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Monitoring_Catheterisation'><input type='checkbox' name='chk_Monitoring' id='chk_Monitoring_Catheterisation' value='Catheterisation' class='custom-control-input chk_Monitoring'><label for='chk_Monitoring_Catheterisation' class='custom-control-label'>Catheterisation</label></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id='Anaesthesia' class='row'>
+            <div id='inner_Anaesthesia' class='col-md-12 '>
+              <h4>Anaesthesia</h4>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Anaesthesia_Entonox'><input type='checkbox' name='chk_Anaesthesia' id='chk_Anaesthesia_Entonox' value='Entonox' class='custom-control-input chk_Anaesthesia'><label for='chk_Anaesthesia_Entonox' class='custom-control-label'>Entonox</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Anaesthesia_LA'><input type='checkbox' name='chk_Anaesthesia' id='chk_Anaesthesia_LA' value='LA' class='custom-control-input chk_Anaesthesia'><label for='chk_Anaesthesia_LA' class='custom-control-label'>LA</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Anaesthesia_Sedation'><input type='checkbox' name='chk_Anaesthesia' id='chk_Anaesthesia_Sedation' value='Sedation' class='custom-control-input chk_Anaesthesia'><label for='chk_Anaesthesia_Sedation' class='custom-control-label'>Sedation</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Anaesthesia_GA'><input type='checkbox' name='chk_Anaesthesia' id='chk_Anaesthesia_GA' value='GA' class='custom-control-input chk_Anaesthesia'><label for='chk_Anaesthesia_GA' class='custom-control-label'>GA</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Anaesthesia_RegionalBlock'><input type='checkbox' name='chk_Anaesthesia' id='chk_Anaesthesia_RegionalBlock' value='Regional Block' class='custom-control-input chk_Anaesthesia'><label for='chk_Anaesthesia_RegionalBlock' class='custom-control-label'>Regional Block</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div id='WoundClosures' class='row'>
+            <div id='inner_WoundClosures' class='col-md-12 '>
+              <h4>Wound Closures</h4>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_WoundClosures_WoundGlue'><input type='checkbox' name='chk_WoundClosures' id='chk_WoundClosures_WoundGlue' value='Wound Glue' class='custom-control-input chk_WoundClosures'><label for='chk_WoundClosures_WoundGlue' class='custom-control-label'>Wound Glue</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_WoundClosures_Sutures'><input type='checkbox' name='chk_WoundClosures' id='chk_WoundClosures_Sutures' value='Sutures' class='custom-control-input chk_WoundClosures'><label for='chk_WoundClosures_Sutures' class='custom-control-label'>Sutures</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_WoundClosures_WoundClosureOther'><input type='checkbox' name='chk_WoundClosures' id='chk_WoundClosures_WoundClosureOther' value='Wound Closure - Other' class='custom-control-input chk_WoundClosures'><label for='chk_WoundClosures_WoundClosureOther' class='custom-control-label'>Wound Closure - Other</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_WoundClosures_RemovalofSutures'><input type='checkbox' name='chk_WoundClosures' id='chk_WoundClosures_RemovalofSutures' value='Removal of Sutures' class='custom-control-input chk_WoundClosures'><label for='chk_WoundClosures_RemovalofSutures' class='custom-control-label'>Removal of Sutures</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_WoundClosures_Clips'><input type='checkbox' name='chk_WoundClosures' id='chk_WoundClosures_Clips' value='Clips' class='custom-control-input chk_WoundClosures'><label for='chk_WoundClosures_Clips' class='custom-control-label'>Clips</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox'>&nbsp;</div> </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div id='AdditionalTreatments' class='row'>
+            <div id='inner_AdditionalTreatments' class='col-md-12 '>
+              <h4>Additional Treatments</h4>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_AdditionalTreatments_TetanusImmune'><input type='checkbox' name='chk_AdditionalTreatments' id='chk_AdditionalTreatments_TetanusImmune' value='Tetanus - Immune' class='custom-control-input chk_AdditionalTreatments'><label for='chk_AdditionalTreatments_TetanusImmune' class='custom-control-label'>Tetanus - Immune</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_AdditionalTreatments_TetanusDiptheriaBooster'><input type='checkbox' name='chk_AdditionalTreatments' id='chk_AdditionalTreatments_TetanusDiptheriaBooster' value='Tetanus - Diptheria Booster' class='custom-control-input chk_AdditionalTreatments'><label for='chk_AdditionalTreatments_TetanusDiptheriaBooster' class='custom-control-label'>Tetanus - Diptheria Booster</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_AdditionalTreatments_TetanusImmunoglobulins'><input type='checkbox' name='chk_AdditionalTreatments' id='chk_AdditionalTreatments_TetanusImmunoglobulins' value='Tetanus - Immunoglobulins' class='custom-control-input chk_AdditionalTreatments'><label for='chk_AdditionalTreatments_TetanusImmunoglobulins' class='custom-control-label'>Tetanus - Immunoglobulins</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_AdditionalTreatments_Charcoal'><input type='checkbox' name='chk_AdditionalTreatments' id='chk_AdditionalTreatments_Charcoal' value='Charcoal' class='custom-control-input chk_AdditionalTreatments'><label for='chk_AdditionalTreatments_Charcoal' class='custom-control-label'>Charcoal</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_AdditionalTreatments_Thrombolysis'><input type='checkbox' name='chk_AdditionalTreatments' id='chk_AdditionalTreatments_Thrombolysis' value='Thrombolysis' class='custom-control-input chk_AdditionalTreatments'><label for='chk_AdditionalTreatments_Thrombolysis' class='custom-control-label'>Thrombolysis</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_AdditionalTreatments_DentalTreatment'><input type='checkbox' name='chk_AdditionalTreatments' id='chk_AdditionalTreatments_DentalTreatment' value='Dental Treatment' class='custom-control-input chk_AdditionalTreatments'><label for='chk_AdditionalTreatments_DentalTreatment' class='custom-control-label'>Dental Treatment</label></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id='Discharge' class='row'>
+            <div id='inner_Discharge' class='col-md-12 '>
+              <h4>Discharge</h4>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Discharge_VerbalAdvice'><input type='checkbox' name='chk_Discharge' id='chk_Discharge_VerbalAdvice' value='Verbal Advice' class='custom-control-input chk_Discharge'><label for='chk_Discharge_VerbalAdvice' class='custom-control-label'>Verbal Advice</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Discharge_WrittenAdvice'><input type='checkbox' name='chk_Discharge' id='chk_Discharge_WrittenAdvice' value='Written Advice' class='custom-control-input chk_Discharge'><label for='chk_Discharge_WrittenAdvice' class='custom-control-label'>Written Advice</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Discharge_OTAssessment'><input type='checkbox' name='chk_Discharge' id='chk_Discharge_OTAssessment' value='OT Assessment' class='custom-control-input chk_Discharge'><label for='chk_Discharge_OTAssessment' class='custom-control-label'>OT Assessment</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Discharge_SocialWorkerAssessment'><input type='checkbox' name='chk_Discharge' id='chk_Discharge_SocialWorkerAssessment' value='Social Worker Assessment' class='custom-control-input chk_Discharge'><label for='chk_Discharge_SocialWorkerAssessment' class='custom-control-label'>Social Worker Assessment</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Discharge_Crutches'><input type='checkbox' name='chk_Discharge' id='chk_Discharge_Crutches' value='Crutches' class='custom-control-input chk_Discharge'><label for='chk_Discharge_Crutches' class='custom-control-label'>Crutches</label></div></div>
+              <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_Discharge_NoTreatment'><input type='checkbox' name='chk_Discharge' id='chk_Discharge_NoTreatment' value='No Treatment' class='custom-control-input chk_Discharge'><label for='chk_Discharge_NoTreatment' class='custom-control-label'>No Treatment</label></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a name="ad_Discharge"></a>
+  <div id='SeniorReview' class='row'>
+    <div id='inner_SeniorReview' class='col-md-12 '>
+      <h3>Senior Review</h3>
+      <div id="SeniorReviewRequiredRow" class="row">
+        <div class="col-md-12">
+          <h6>Is a Senior Review Required?</h6>
+          <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_SeniorReview_SeniorReviewRequired'><input type='checkbox' name='chk_SeniorReview' id='chk_SeniorReview_SeniorReviewRequired' value='Senior Review Required' class='custom-control-input chk_SeniorReview'><label for='chk_SeniorReview_SeniorReviewRequired' class='custom-control-label'>Yes</label></div></div>
+        </div>
+      </div>
+      <div id="SeniorReviewRow" class="row">
+        <div class="col-md-6">
+          <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_SeniorReview_DischargeofAtraumaticChestPain'><input type='checkbox' name='chk_SeniorReview' id='chk_SeniorReview_DischargeofAtraumaticChestPain' value='Discharge of Atraumatic Chest Pain' class='custom-control-input chk_SeniorReview'><label for='chk_SeniorReview_DischargeofAtraumaticChestPain' class='custom-control-label'>Discharge of Atraumatic Chest Pain</label></div></div>
+          <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_SeniorReview_DischargeofChildUnder1withMedicalCondition'><input type='checkbox' name='chk_SeniorReview' id='chk_SeniorReview_DischargeofChildUnder1withMedicalCondition' value='Discharge of Child Under 1 with Medical Condition' class='custom-control-input chk_SeniorReview'><label for='chk_SeniorReview_DischargeofChildUnder1withMedicalCondition' class='custom-control-label'>Discharge of Child Under 1 with Medical Condition</label></div></div>
+          <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_SeniorReview_DischargeofPatientPreAttendedinlast72Hours'><input type='checkbox' name='chk_SeniorReview' id='chk_SeniorReview_DischargeofPatientPreAttendedinlast72Hours' value='Discharge of Patient - Pre-Attended in last 72 Hours' class='custom-control-input chk_SeniorReview'><label for='chk_SeniorReview_DischargeofPatientPreAttendedinlast72Hours' class='custom-control-label'>Discharge of Patient - Pre-Attended in last 72 Hours</label></div></div>
+          <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_SeniorReview_Other'><input type='checkbox' name='chk_SeniorReview' id='chk_SeniorReview_Other' value='Other' class='custom-control-input chk_SeniorReview'><label for='chk_SeniorReview_Other' class='custom-control-label'>Other</label></div></div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Reviewing Doctor</label>
+            <div class="col-sm-4">
+              <select class="form-control" id="ddlReviewingDoctor" name="ddlReviewingDoctor">
+                <option value="">---Please Select---</option>
+                <option value="Mr. Bhatt">Mr. Bhatt</option>
+                <option value="Mr. Calvin">Mr. Calvin</option>
+                <option value="Mrs. Conway">Mrs. Conway</option>
+                <option value="Mrs. Gibson">Mrs. Gibson</option>
+                <option value="Mr. George">Mr. George</option>
+                <option value="Mr. Hobbes">Mr. Hobbes</option>
+                <option value="Miss Kumar">Miss Kumar</option>
+                <option value="Mr. Patel">Mr. Patel</option>
+                <option value="Miss Ratnasothy">Mr Ratnasothy</option>
+                <option value="Mr. Smith">Mr. Smith</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div id='DischargePlanning' class='row'>
+    <div id='inner_DischargePlanning' class='col-md-12 '>
+      <h3>	Discharge Planning</h3>
+      <div id="ChildWelfareRow" class="row">
+        <div class="col-md-12">
+          <h6>Do you need to complete a child welfare form?</h6>
+          <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_DischargePlanning_ChildWelfareFormYes'><input type='checkbox' name='chk_DischargePlanning' id='chk_DischargePlanning_ChildWelfareFormYes' value='Yes' class='custom-control-input chk_DischargePlanning'><label for='chk_DischargePlanning_ChildWelfareFormYes' class='custom-control-label'>Yes</label></div></div>
+        </div>
+      </div>
+      <div id="DischargePlanningRow" class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Disposal</label>
+                <div class="col-sm-4">
+                  <select class="form-control" id="ddlDisposal" name="ddlDisposal">
+                    <option value="">---Please Select---</option>
+                    <option value="Admitted to a Hospital Bed">Admitted to a Hospital Bed</option>
+                    <option value="Discharged - follow up GP">Discharged - follow up GP</option>
+                    <option value="Discharged – No follow up">Discharged – No follow up</option>
+                    <option value="Referred to A&E Clinic">Referred to A&E Clinic</option>
+                    <option value="Referred to Fracture Clinic">Referred to Fracture Clinic</option>
+                    <option value="Referred to other Out-Patient Clinic">Referred to other Out-Patient Clinic</option>
+                    <option value="Transferred to other HCP">Transferred to other HCP</option>
+                    <option value="Died in Department">Died in Department</option>
+                    <option value="Referred to other HCP">Referred to other HCP</option>
+                    <option value="Left Department before being seen">Left Department before being seen</option>
+                    <option value="Left Department having refused treatment">Left Department having refused treatment</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Ward</label>
+                <div class="col-sm-4">
+                  <select class="form-control" id="ddDisposallWard" name="ddlWard">
+                    <option value="">---Please Select---</option>
+                    <option value="Angus Mackinnon Ward">Angus Mackinnon Ward</option>
+                    <option value="Churchill Ward">Churchill Ward</option>
+                    <option value="HCA Ward">HCA Ward</option>
+                    <option value="Ian Monro Ward">Ian Monro Ward</option>
+                    <option value="Jackson Burrows Ward">Jackson Burrows Ward</option>
+                    <option value="Jarvis Ward">Jarvis Ward</option>
+                    <option value="Margaret Harte Ward">Margaret Harte Ward</option>
+                    <option value="Paediatric Ward">Paediatric Ward</option>
+                    <option value="Philip Newman Ward">Philip Newman Ward</option>
+                    <option value="Spire Ward">Spire Ward</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Treatment Complete Time</label>
+                <div class="col-auto">
+                  <input type="date" class="form-control mb-4">
+                  <input type="time" class="form-control mb-2">
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id='DischargeFinal' class='row'>
+    <div id='inner_DischargeFinal' class='col-md-12 '>
+      <h3>	Discharge</h3>
+      <div id="DischargeRow" class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Comments</label>
+                <div class="col-sm-10">
+                  <textarea id="txtDischargeComments" class="form-control" rows="10"></textarea>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="LeftDepartmentNowRow" class="row" hidden>
+        <div class="col-md-6">
+          <h6>Left Department Now</h6>
+          <div class='custom-controls-stacked'><div class='custom-control custom-checkbox' id='div_DischargeNow_LeftDepartmentNow'><input type='checkbox' name='chk_Discharge_LeftDepartmentNow' id='chk_Discharge_LeftDepartmentNow' value='Yes' class='custom-control-input Discharge_LeftDepartmentNow'><label for='chk_Discharge_LeftDepartmentNow' class='custom-control-label'>Yes</label></div></div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Actual Departure Time</label>
+            <div class="col-auto">
+              <input type="date" class="form-control mb-4">
+              <input type="time" class="form-control mb-2">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-6" style="padding-right:60px;">
+      <button id="btnSave" class="btn btn-lg btn-success pull-right">
+        Save
+      </button>
+    </div>
+  </div>
+
+
+  <button class="btn btn-secondary scroll-top" data-scroll="up" type="button">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+
+
+  <div style="height: 1000px;">
+    &nbsp;
+  </div>
+
+
+</div>
+
+
